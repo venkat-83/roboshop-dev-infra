@@ -34,11 +34,11 @@ resource "aws_iam_policy" "mysqll" {
 }
 
 resource "aws_iam_role_policy_attachment" "mysql" {
-  role       = aws_iam_role.mysql.name
-  policy_arn = aws_iam_policy.mysql.arn
+  role       = aws_iam_role.mysqll.name
+  policy_arn = aws_iam_policy.mysqll.arn
 }
 
 resource "aws_iam_instance_profile" "mysql" {
   name = "${local.common_name}-mysql"
-  role = aws_iam_role.mysql.name
+  role = aws_iam_role.mysqll.name
 }
