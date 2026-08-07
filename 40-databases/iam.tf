@@ -1,4 +1,4 @@
-resource "aws_iam_role" "mysql" {
+resource "aws_iam_role" "mysqll" {
   name = "${local.common_name}-mysql" # roboshop-dev-mysql
 
   # This is the trust policy, means we can attach this role to EC2 instance
@@ -24,7 +24,7 @@ resource "aws_iam_role" "mysql" {
   )
 }
 
-resource "aws_iam_policy" "mysql" {
+resource "aws_iam_policy" "mysqll" {
   name        = "${local.common_name}-mysql"
   description = "Policy to read MySQL SSM paramter to attach to mysql instance"
 
