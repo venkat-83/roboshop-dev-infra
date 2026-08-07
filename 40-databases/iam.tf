@@ -1,4 +1,4 @@
-resource "aws_iam_role" "mysqll" {
+resource "aws_iam_role" "mysql" {
   name = "${local.common_name}-mysql" # roboshop-dev-mysql
 
   # This is the trust policy, means we can attach this role to EC2 instance
@@ -35,10 +35,10 @@ resource "aws_iam_policy" "mysqll" {
 
 resource "aws_iam_role_policy_attachment" "mysql" {
   role       = aws_iam_role.mysqll.name
-  policy_arn = aws_iam_policy.mysqll.arn
+  policy_arn = aws_iam_policy.mysql.arn
 }
 
 resource "aws_iam_instance_profile" "mysql" {
   name = "${local.common_name}-mysql"
-  role = aws_iam_role.mysqll.name
+  role = aws_iam_role.mysql.name
 }
